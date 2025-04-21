@@ -74,6 +74,11 @@ export const ListContainer = styled.div`
     display: flex;
     margin-left: 18px;
   }
+  
+  @media ${(props) => props.theme.breakpoints.lg} {
+    display: flex;
+    margin-left: 18px;
+  }
 `;
 
 export const ListTitle = styled.h4`

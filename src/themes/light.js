@@ -10,7 +10,7 @@ export default {
     background1: "#fafafa", // Soft off-white background
     accent1: "#0f1624",
     button: "#9cc9e3",
-    background2: "#f1f3f5", // Slightly darker off-white for secondary backgrounds
+    background2: "rgb(227, 227, 227)", // Slightly darker off-white for secondary backgrounds
     // Text colors
     text: "#000000", // Black text
     textSecondary: "rgba(0, 0, 0, 0.8)",
