@@ -37,6 +37,7 @@ export const List = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin: 3rem 0;
+  padding: 0;
 
   @media ${(props) => props.theme.breakpoints.lg} {
     margin: 64px 0;
@@ -57,6 +58,17 @@ export const List = styled.ul`
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: ${(props) => props.theme.colors.background2};
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px ${(props) => props.theme.colors.shadowHover};
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
@@ -66,11 +78,13 @@ export const ListContainer = styled.div`
 
 export const ListTitle = styled.h4`
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 32px;
   letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: 24px;
@@ -87,9 +101,9 @@ export const ListTitle = styled.h4`
 
 export const ListParagraph = styled.p`
   font-size: 16px;
-  line-height: 30px;
-  text-align: justify;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 24px;
+  margin: 0;
+  max-width: 400px;
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: 16px;
@@ -103,12 +117,13 @@ export const ListParagraph = styled.p`
 `;
 
 export const ListItem = styled.li`
-  max-width: 320px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
+  background: transparent;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    max-width: 203px;
+    max-width: 400px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -118,21 +133,24 @@ export const ListItem = styled.li`
   }
 `;
 
-export const ListIcon = styled.img`
-  display: block;
+export const IconWrapper = styled.div`
   width: 48px;
   height: 48px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 16px;
 
   @media ${(props) => props.theme.breakpoints.md} {
     width: 40px;
     height: 40px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 32px;
     height: 32px;
-    margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 `;

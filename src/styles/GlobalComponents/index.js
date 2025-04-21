@@ -70,8 +70,8 @@ export const SectionTitle = styled.h2`
   max-width: 100%;
   background: linear-gradient(
     121.57deg,
-    #ffffff 18.77%,
-    rgba(255, 255, 255, 0.66) 60.15%
+    ${(props) => props.theme.colors.text} 18.77%,
+    ${(props) => props.theme.colors.textSecondary} 60.15%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -100,7 +100,7 @@ export const SectionText = styled.p`
   font-weight: 300;
   padding-top: 3.2rem;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(props) => props.theme.colors.textSecondary};
 
   @media ${(props) => props.theme.breakpoints.lg} {
     max-width: 1050px;
@@ -108,7 +108,7 @@ export const SectionText = styled.p`
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.5);
+    color: ${(props) => props.theme.colors.textSecondary};
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -131,9 +131,11 @@ export const SectionDivider = styled.div`
   width: 64px;
   height: 6px;
   border-radius: 10px;
-  background-color: #fff;
-  background: linear-gradient(323deg, #343434 0%, #979797 100%);
-
+  background: linear-gradient(
+    323deg,
+    ${(props) => props.theme.colors.background2} 0%,
+    ${(props) => props.theme.colors.text} 100%
+  );
   margin: ${(props) => (props.divider ? "4rem 0" : "")};
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -146,12 +148,13 @@ export const SectionDivider = styled.div`
     height: 2px;
   }
 `;
+
 export const SectionSubText = styled.p`
   max-width: 800px;
   font-weight: 300;
   font-size: 18px;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => props.theme.colors.textSecondary};
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 672px;
@@ -164,10 +167,11 @@ export const SectionSubText = styled.p`
     line-height: 22px;
   }
 `;
+
 export const SecondaryBtn = styled.button`
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   background: none;
-  border: 1px solid rgba(255, 255, 255, 0.33);
+  border: 1px solid ${(props) => props.theme.colors.textSecondary};
   box-sizing: border-box;
   border-radius: 999px;
   padding: 16px 24px;
@@ -184,14 +188,14 @@ export const SecondaryBtn = styled.button`
   }
 
   &:hover {
-    color: #0f1624;
-    background: #fff;
-    border: 1px solid #fff;
+    color: ${(props) => props.theme.colors.background1};
+    background: ${(props) => props.theme.colors.text};
+    border: 1px solid ${(props) => props.theme.colors.text};
   }
 
   &:active {
-    background: #e0e4eb;
-    border: 1px solid #304169;
+    background: ${(props) => props.theme.colors.background2};
+    border: 1px solid ${(props) => props.theme.colors.button};
     box-shadow: inset 0px 2px 1px rgba(46, 49, 55, 0.15),
       inset 0px 0px 4px rgba(20, 20, 55, 0.3);
   }
@@ -225,8 +229,12 @@ export const ButtonBack = styled.div`
   align-items: center;
   justify-content: center;
   margin: ${({ alt, form }) => (alt || form ? "0" : "0 0 80px")};
-  color: #fff;
-  background: linear-gradient(270deg, #000000 0%, #ffffff 100%)
+  color: ${(props) => props.theme.colors.text};
+  background: linear-gradient(
+    270deg,
+    ${(props) => props.theme.colors.background1} 0%,
+    ${(props) => props.theme.colors.background2} 100%
+  );
   cursor: pointer;
   transition: 0.5s ease;
   position: relative;
@@ -251,14 +259,18 @@ export const ButtonBack = styled.div`
 export const ButtonFront = styled.button`
   border: none;
   border-radius: 50px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(323deg, #343434 0%, #979797 100%);
+  background: linear-gradient(
+    323deg,
+    ${(props) => props.theme.colors.background2} 0%,
+    ${(props) => props.theme.colors.text} 100%
+  );
   opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
   transition: 0.4s ease;
   font-size: ${({ alt }) => (alt ? "20px" : "24px")};
@@ -284,7 +296,11 @@ export const ButtonFront = styled.button`
   }
 
   &:disabled {
-    background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
+    background: linear-gradient(
+      270deg,
+      ${(props) => props.theme.colors.accent1} 0%,
+      ${(props) => props.theme.colors.button} 100%
+    );
     opacity: 0.5;
     box-shadow: inset 0px 2px 1px rgba(46, 49, 55, 0.15),
       inset 0px 0px 4px rgba(20, 20, 55, 0.3);

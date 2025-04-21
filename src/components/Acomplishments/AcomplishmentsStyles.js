@@ -31,10 +31,17 @@ export const Imgs = styled.img`
 `;
 
 export const Box = styled.div`
-  background: #2e2e2c;
+  background: ${(props) => props.theme.colors.background2};
   border-radius: 12px;
   height: auto;
   padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px ${(props) => props.theme.colors.shadowHover};
+  }
+
   @media ${(props) => props.theme.breakpoints.lg} {
     height: auto;
     padding: 18px;
@@ -54,13 +61,14 @@ export const Box = styled.div`
     }
   }
 `;
+
 export const BoxNum = styled.h5`
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 0.01em;
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.text};
   margin-bottom: 8px;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -79,7 +87,7 @@ export const BoxText = styled.p`
   font-size: 18px;
   line-height: 35px;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => props.theme.colors.textSecondary};
 
   @media ${(props) => props.theme.breakpoints.lg} {
     font-size: 16px;

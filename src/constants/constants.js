@@ -34,9 +34,9 @@ export const projects = [
     id: 2
   },
   {
-    title: "COVID-19 Detection",
+    title: "Pneumonia Detection",
     description:
-      "The purpose of this project is to compare models between TinyVGG and EfficientNetB0 on which model is better to detect COVID-19 from X-Ray images",
+      "The purpose of this project is to compare models between TinyVGG and EfficientNetB0 on which model is better to detect Pneumonia from X-Ray images",
     image: "/images/Projects/7.png",
     play: "https://huggingface.co/spaces/fbrynpk/Covid-19-Detection",
     tags: ["Python", "PyTorch", "Transfer Learning"],

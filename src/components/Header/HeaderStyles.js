@@ -11,7 +11,7 @@ export const Container = styled.div`
   position: fixed;
   top: 0px;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   background-color: ${(props) => props.theme.colors.background1};
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -70,10 +70,10 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  transition: 0.4s ease;
+  color: ${(props) => props.theme.colors.text};
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.accent1};
     opacity: 1;
     cursor: pointer;
   }
@@ -89,17 +89,16 @@ export const ContactDropDown = styled.button`
   position: relative;
   background: none;
   font-size: 1.7rem;
-
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => props.theme.colors.text};
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus {
     outline: none;
   }
   &:hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.accent1};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -114,7 +113,7 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   margin-left: 8px;
   display: flex;
   align-self: center;
-  transition: 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: ${({ isOpen }) => (isOpen ? "1" : ".75")};
   transform: ${({ isOpen }) => (isOpen ? "scaleY(-1)" : "scaleY(1)")};
 
@@ -131,12 +130,12 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 // Social Icons
 
 export const SocialIcons = styled.a`
-  transition: 0.3s ease;
-  color: white;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: ${(props) => props.theme.colors.text};
   border-radius: 50px;
   padding: 8px;
   &:hover {
-    background-color: grey;
+    background-color: ${(props) => props.theme.colors.background2};
     transform: scale(1.2);
     cursor: pointer;
   }
